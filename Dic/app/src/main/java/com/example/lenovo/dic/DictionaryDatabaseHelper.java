@@ -82,7 +82,6 @@ public class DictionaryDatabaseHelper extends SQLiteOpenHelper {
 
         String selectAllQueryString="SELECT * FROM "+DICTIONARY_DATABASE;
         Cursor cursor=database.rawQuery(selectAllQueryString, null);
-
         if (cursor.moveToFirst()) {
             do {
                 WordDefinition wordDefinition=new WordDefinition(cursor.getString(cursor.getColumnIndex(WORD_COLUMN)), cursor.getString(cursor.getColumnIndex(DEFINITION_COLUMN)));

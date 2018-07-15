@@ -1,17 +1,24 @@
 package com.example.lenovo.dic;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class WordDefinitionDetailActivity extends Activity {
 
     TextView wordTextView;
     TextView definitionTextView;
+    Button bf , bb;
+    int i=0 , j=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +34,9 @@ public class WordDefinitionDetailActivity extends Activity {
         wordTextView.setText(getIntent().getStringExtra("word"));
         definitionTextView.setText(getIntent().getStringExtra("definition"));
 
+        bf = (Button) findViewById(R.id.button);
+        bb = (Button) findViewById(R.id.button3);
+
     }
 
     @Override
@@ -35,4 +45,5 @@ public class WordDefinitionDetailActivity extends Activity {
         getMenuInflater().inflate(R.menu.word_definition_detail, menu);
         return true;
     }
-}
+
+    }
